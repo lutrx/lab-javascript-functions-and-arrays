@@ -36,12 +36,33 @@ function findLongestWord(arr) {
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
+function sumNumbers(arr) {
+  let sum = 0;
+  arr.forEach(number => {
+    sum = sum + number;
+  });
+  return sum;
+}
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(arr) {
+  let sumOfArr = 0;
+  arr.forEach(element => {
+    if ((isNaN(element) === false) && (typeof element != "string") && (typeof element != "boolean")) {
+      sumOfArr = sumOfArr + element;
+    } else if ((typeof element === "string")) {
+      sumOfArr = sumOfArr + element.length;
+    } else if ((typeof element === "boolean")) {
+      sumOfArr = sumOfArr + Number(element);
+    } else if (typeof element === "object") {
+      throw new Error("Unsupported data type sir or ma'am");
+    }
+  });
+  return sumOfArr;
+}
+
+
 
 
 
